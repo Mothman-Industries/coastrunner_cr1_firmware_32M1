@@ -2,16 +2,18 @@
 	#define _PID_H_
 	
 	// Min and Max value for result
-	#define PID_MIN_VALUE 150
+	#define PID_MIN_VALUE 127
 	#define PID_MAX_VALUE 255
 
+	// PID Value for whe motor isn't turning
+	#define PID_KICKSTART_VALUE (PID_MIN_VALUE + ((PID_MAX_VALUE-PID_MIN_VALUE) / 2))
+	#define PID_KICKSTART_DUTY PID_KICKSTART_VALUE
+
 	// PID coefficients
-	#define PID_COEFF_P 8L
-	#define PID_COEFF_I 3L
+	#define PID_COEFF_P 3L
+	#define PID_COEFF_I 1L
 	#define PID_COEFF_D 0L
 	#define PID_COEF_SCALE_LOG2 14 // Number of fractional bits used to represent PID
-
-	#define PID_KICKSTART_DUTY PID_MIN_VALUE
 
     //#define SPINDLE_MODE_OPEN_LOOP
     #define SPINDLE_MODE_CLOSED_LOOP

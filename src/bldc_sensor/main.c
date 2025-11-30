@@ -27,18 +27,18 @@ int main(void)
   while(1)
   {	  	  
     if (timing_runControlLoop_get() == TRUE) //controlled by Timer0 interrupt
-    {	
-      timing_runControlLoop_set(FALSE); //prevent control loop from running again until next Timer0 interrupt occurs
-
-      interface_handler();
-	  pid_scheduler();
-    }
+      {	
+        timing_runControlLoop_set(FALSE); //prevent control loop from running again until next Timer0 interrupt occurs
+        interface_handler(); // Look at inputs
+        pid_scheduler(); // Adjust PWM duty cycle
+        // Phase switching is determined directly from Hall Effect state with targets set by interface_handler()
+      }
 	
-	if((timing_measuredRPM_get() == 0) && (motor_state_get() == RUNNING) ) //motor isn't spinning, but should be
-	{	
-		//kickstart motor
-		pid_dutyCycle_set(PID_KICKSTART_DUTY);
-		psc_commutateOutputWaveforms(PID_KICKSTART_DUTY);
-	}
-  }
+    if((timing_measuredRPM_get() == 0) && (motor_state_get() == RUNNING) ) //motor isn't spinning, but should be
+      {	
+        //kickstart motor
+        pid_dutyCycle_set(PID_KICKSTART_DUTY);
+        psc_commutateOutputWaveforms(PID_KICKSTART_DUTY);
+      }
+   }
 }
