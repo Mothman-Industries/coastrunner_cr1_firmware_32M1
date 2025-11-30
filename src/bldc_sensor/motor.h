@@ -11,6 +11,7 @@
     void motor_init(void);
     void motor_stop(void);
     void motor_run(void);
+    void motor_kickstart(void);
 
     uint8_t motor_state_get(void);
 

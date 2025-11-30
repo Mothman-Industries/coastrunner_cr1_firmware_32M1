@@ -150,10 +150,10 @@ void onOffToggle(){
 
 void loop() {
   readError();
-  //speedChangeLoop();
+  speedChangeLoop();
   //Serial.println(digitalRead(dbg1Pin)+digitalRead(dbg0Pin));
   //changeAtTarget();
-  rapidReverse();
+  //rapidReverse();
   //onOffToggle();
-  delay(2500);
+  delay(1000);
 }

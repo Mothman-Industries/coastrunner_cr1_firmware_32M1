@@ -23,7 +23,6 @@ uint8_t hall_getPosition(void)
 {
   static uint8_t state_previous = 0;
   static uint8_t numConsecutiveInvalidStates = 0;
-  static uint8_t numConsecutiveValidStates = 0;	
   
   //Build Hall state 0b0000 0BGY (B=BLU, G=GRN, Y=YEL)
   uint8_t state = ( (( (PIND & (1<<PIND1)) >> PIND1) << 2) |  //Hall BLU //MSB
@@ -36,18 +35,9 @@ uint8_t hall_getPosition(void)
 	  //hall states in transition
 	  state = state_previous;
 	  numConsecutiveInvalidStates++;
-  } 
-  else if((state == state_previous) && (numConsecutiveValidStates > 255)) // test if motor is stalled
-  {
-	  state = state ^ 0b00000111;
-	  numConsecutiveValidStates = 0;
-  } 
+  }
   else //valid Hall state (or motor is stalled)
-  {
-    if(state == state_previous)
-    {      
-	    numConsecutiveValidStates++;
-    }    
+  {   
 	  state_previous = state; //store for next iteration
 	  numConsecutiveInvalidStates = 0;
   } 

@@ -37,5 +37,13 @@ void motor_run(void)
 
 ////////////////////////////////////////////////////////////////////////////////////////
 
+void motor_kickstart(void)
+{  
+  pid_dutyCycle_set(PID_KICKSTART_DUTY);
+  psc_commutateOutputWaveforms(PID_KICKSTART_DUTY);
+}
+
+////////////////////////////////////////////////////////////////////////////////////////
+
 void    motor_direction_set(uint8_t direction) { (direction == MOTOR_CCW) ? (motorDirection = MOTOR_CCW) : (motorDirection = MOTOR_CW); }
 uint8_t motor_direction_get(void) { return motorDirection; } //This ONLY retrieves the modal state (not the actual pin logic level)

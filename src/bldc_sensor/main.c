@@ -36,9 +36,7 @@ int main(void)
 	
     if((timing_measuredRPM_get() == 0) && (motor_state_get() == RUNNING) ) //motor isn't spinning, but should be
       {	
-        //kickstart motor
-        pid_dutyCycle_set(PID_KICKSTART_DUTY);
-        psc_commutateOutputWaveforms(PID_KICKSTART_DUTY);
+        motor_kickstart(); //kickstart motor
       }
    }
 }
