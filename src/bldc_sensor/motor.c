@@ -40,7 +40,9 @@ void motor_run(void)
 void motor_kickstart(void)
 {  
   pid_dutyCycle_set(PID_KICKSTART_DUTY);
-  psc_commutateOutputWaveforms(PID_KICKSTART_DUTY);
+
+  uint8_t phaseTarget = hall_getPosition();
+  psc_phaseSelect(PID_KICKSTART_DUTY, phaseTarget);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////

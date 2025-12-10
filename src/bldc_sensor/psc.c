@@ -74,6 +74,15 @@ void psc_init (void)
   // duty = 255: Duty Cycle 100%
 void psc_commutateOutputWaveforms(uint8_t duty)
 { 
+  uint8_t hallState = hall_getPosition();
+
+  psc_phaseSelect(duty, hallState);
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+void psc_phaseSelect(uint8_t duty, uint8_t phaseTarget)
+{
   if ( motor_state_get() == STOPPED )
   {
     psc_disconnectAllMOSFETs();
@@ -94,16 +103,14 @@ void psc_commutateOutputWaveforms(uint8_t duty)
   else //(motor_state_get() == RUNNING)
   {
     psc_connectAllMOSFETs();
-    
-    uint8_t hallState = hall_getPosition();
 
   	//flip hall bits (6->1, 5->2. 4->3, 3->4, 2->5, 1->6)
-    if(motor_direction_get() == MOTOR_CCW) { hallState = ((~hallState) & 0b00000111); }
+    if(motor_direction_get() == MOTOR_CCW) { phaseTarget = ((~phaseTarget) & 0b00000111); }
 
   	Psc_lock();
 
   	//Determine which two PSC outputs will generate PWM waveforms 
-  	switch(hallState)
+  	switch(phaseTarget)
   	{
   		case 1:  
   		Psc_set_module_A(duty,A_RA_VAL,0); //PWM_Q1 (PSC0A)(PD0)

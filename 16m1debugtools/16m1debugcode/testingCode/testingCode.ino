@@ -8,6 +8,9 @@ const float maxSpeed = 8000;
 const float minSpeed = 2000;
 const float maxPWM = 200;
 
+const int interval = 500;
+const int stepTime = 2500/8;
+
 float pwmMultiplier = maxPWM/maxSpeed;
 float pwmOffset = (minSpeed * pwmMultiplier) / 2;
 
@@ -95,13 +98,19 @@ void readError(){
 
 void speedChangeLoop(){
   if(climbDirection){
-    targetSpeed = targetSpeed + 500;
+    targetSpeed = targetSpeed + interval;
     if(targetSpeed >= maxSpeed){      
       climbDirection = false;
     }
   } else if(!climbDirection){
-    targetSpeed = targetSpeed - 500;
-    if(targetSpeed <= minSpeed){      
+    targetSpeed = targetSpeed - interval;
+    if(targetSpeed <= minSpeed){
+      if(targetSpeed == 0){
+        delay(stepTime);
+        targetSpeed = minSpeed + interval;
+      } else {
+        targetSpeed = 0;
+      }
       climbDirection = true;
       targetDirection = !targetDirection;
     }
@@ -150,10 +159,10 @@ void onOffToggle(){
 
 void loop() {
   readError();
-  speedChangeLoop();
+  //speedChangeLoop();
   //Serial.println(digitalRead(dbg1Pin)+digitalRead(dbg0Pin));
-  //changeAtTarget();
+  changeAtTarget();
   //rapidReverse();
   //onOffToggle();
-  delay(1000);
+  delay(stepTime);
 }

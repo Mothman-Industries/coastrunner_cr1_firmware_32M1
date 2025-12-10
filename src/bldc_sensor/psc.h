@@ -35,6 +35,8 @@
 
     void psc_commutateOutputWaveforms(uint8_t duty);
 
+    void psc_phaseSelect(uint8_t duty, uint8_t phaseTarget);
+
     void psc_disconnectAllMOSFETs(void);
 
     void psc_connectAllMOSFETs(void);

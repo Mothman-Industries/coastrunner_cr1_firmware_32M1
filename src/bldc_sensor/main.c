@@ -34,8 +34,9 @@ int main(void)
         // Phase switching is determined directly from Hall Effect state with targets set by interface_handler()
       }
 	
-    if((timing_measuredRPM_get() == 0) && (motor_state_get() == RUNNING) ) //motor isn't spinning, but should be
+    if((timing_measuredRPM_get() < MIN_ALLOWED_RPM) && (motor_state_get() == RUNNING) ) //motor isn't spinning, but should be
       {	
+        //psc_commutateOutputWaveforms(PID_KICKSTART_DUTY);
         motor_kickstart(); //kickstart motor
       }
    }

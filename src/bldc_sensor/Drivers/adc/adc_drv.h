@@ -133,7 +133,7 @@
 		  //! Configure the ADC
 		  //! @{
 	
-	//JTS: These are the various registers that need to be set to use the ADC //adc_init() does the same thing with functions 
+	//JTS: These are the various registers that need to be set to use the ADC //adc_init() does the same thing with functions
 	// #define Adc_config() \
 	//   ADMUX  = (ADC_REF_SOURCE<<REFS0)| \
 	// 		   (ADC_ADLAR_VALUE<<ADLAR)| \
