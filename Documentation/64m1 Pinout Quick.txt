@@ -1,0 +1,47 @@
+17 (AMP1-)??, 13 (ACMP2), A4910-29 (Current Sense C Out)
+18 (AMP1+)??, 22 (ACMP1), A4910-32 (Current Sense B Out)
+26 (AMP2-)??, 15 (ACMP0), A4910-35 (Current Sense A Out)
+
+Current Sense Description:
+ACMP0-2 are current sense inputs from the gate driver
+Negative input levels should be set with the internal DAC
+	Phase A and C are defined currently as using the bandgap(1V1)
+When DAC is used, all comparators share the same negative
+When current is above calculated max, a bit is set, and an interrupt is available
+Perhaps:
+	Set Negative Input to ~80% max current
+	When overcurrent bit set, reduce duty cycle
+When left shifted, DAC is updated through setting DACH register to desired value
+When *not* left shifted, DAC is updated by setting DACL first followed by DACH
+
+
+
+32 (PSCIN0), 6, Hall 6 (Blue)
+3 (PSCIN1), Hall 4 (Yellow)
+1 (PSCIN2) (MISO_A), Hall 2 (Green), Arduino A3 (SPI-MOSI)
+
+10, OSC
+11, OSC
+
+29 (PSCOUT0A), A4910-18 (A High)
+28 (PSCOUT0B), A4910-19 (A Low)
+30 (PSCOUT1A), A4910-20 (B High)
+27 (PSCOUT1B), A4910-21 (B Low)
+8 (PSCOUT2A), A4910-22 (C High)
+9 (PSCOUT2B), A4910-23 (C Low)
+
+31 (RESET), Arduino A0 (SPI-RST)
+12 (SCK_A), 7, Arduino A5 (SPI-CLK)
+2 (MOSI_A), Arduino A4 (SPI-MISO) - 64m1 Could potentially continue to *listen* on SPI
+
+20, AGND
+19, AVCC
+4, VCC
+5, GND
+21, AREF
+25 (PCINT15), A4910-17 (Diag)
+14, NC
+24 (PB4), A4910-12 (nReset)
+	Sleep Mode / Fault Clear on A4910
+23 (PCINT3), Arduino-13 (Spindle Direction)
+16 (ADC5), Arduino-11 (Goal Speed - 13Hz Filter)
