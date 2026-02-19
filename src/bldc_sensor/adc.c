@@ -60,9 +60,21 @@ ISR(ADC_vect)
     adc_goalRPM_set(adcResultScaled_goalRPM);
   }
 
-  // else if(ADC_stateMachine == ADC_MEASURING_CURRENT)
+
+  // These may be implemented after comparator based current limiting to enable more precise control
+  // Due to the involved interrupt, they should be used sparingly/intelligently
+
+  // else if(ADC_stateMachine == ADC_MEASURING_CURRENT_A)
+    //Do something with the measurement of Phase A
+
+  // else if(ADC_stateMachine == ADC_MEASURING_CURRENT_B)
+    //Do something with the measurement of Phase B
+
+  // else if(ADC_stateMachine == ADC_MEASURING_CURRENT_C)
+    //Do something with the measurement of Phase C
+
   
-  ADC_hardwareStatus = ADCFREE;
+  ADC_hardwareStatus = ADCFREE; //ADC no longer in use
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
@@ -102,13 +114,29 @@ void adc_scheduler(uint8_t channel)
 
     switch(channel)
     {
+      case ADC_MEASURING_NEXT:
+        ADC_hardwareStatus = ADCFREE; //ADC not in use
+        break;
+
       case ADC_MEASURING_GOAL_RPM:
         Adc_start_conv_channel(ADC_INPUT_ADC5); //configure ADC to measure desired RPM (from grbl)
         ADC_stateMachine = ADC_MEASURING_GOAL_RPM;
         break;
 
-      //case ADC_MEASURING_CURRENT:
-      //  break;
+      case ADC_MEASURING_CURRENT_A:
+        Adc_start_conv_channel(ADC_INPUT_ADC6); //configure ADC to measure Phase A Current
+        ADC_stateMachine = ADC_MEASURING_CURRENT_A;
+        break;
+
+      case ADC_MEASURING_CURRENT_B:
+        Adc_start_conv_channel(ADC_INPUT_ADC9); //configure ADC to measure Phase B Current
+        ADC_stateMachine = ADC_MEASURING_CURRENT_B;
+        break;
+
+      case ADC_MEASURING_CURRENT_C:
+        Adc_start_conv_channel(ADC_INPUT_ADC8); //configure ADC to measure Phase C Current
+        ADC_stateMachine = ADC_MEASURING_CURRENT_C;
+        break;
     }
   }
 }

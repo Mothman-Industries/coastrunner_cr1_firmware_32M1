@@ -1,6 +1,6 @@
-17 (AMP1-)??, 13 (ACMP2), A4910-29 (Current Sense C Out)
-18 (AMP1+)??, 22 (ACMP1), A4910-32 (Current Sense B Out)
-26 (AMP2-)??, 15 (ACMP0), A4910-35 (Current Sense A Out)
+17 (ADC8), 13 (ACMP2), A4910-29 (Current Sense C Out)
+18 (ADC9), 22 (ACMP1), A4910-32 (Current Sense B Out)
+26 (ADC6), 15 (ACMP0), A4910-35 (Current Sense A Out)
 
 Current Sense Description:
 ACMP0-2 are current sense inputs from the gate driver
@@ -13,12 +13,16 @@ Perhaps:
 	When overcurrent bit set, reduce duty cycle
 When left shifted, DAC is updated through setting DACH register to desired value
 When *not* left shifted, DAC is updated by setting DACL first followed by DACH
+ADC8/9/6 provide measured values for current, which will prove useful for vector control
+	An interrupt is generated at the end of ADC reads, so this should be used carefully
+
+CMP and DAC are not currently initialized in code, but intial config is put together
 
 
 
 32 (PSCIN0), 6, Hall 6 (Blue)
 3 (PSCIN1), Hall 4 (Yellow)
-1 (PSCIN2) (MISO_A), Hall 2 (Green), Arduino A3 (SPI-MOSI)
+1 (PSCIN2) (MISO_A), Hall 2 (Green), Arduino A2 (SPI-MOSI)
 
 10, OSC
 11, OSC
@@ -31,8 +35,8 @@ When *not* left shifted, DAC is updated by setting DACL first followed by DACH
 9 (PSCOUT2B), A4910-23 (C Low)
 
 31 (RESET), Arduino A0 (SPI-RST)
-12 (SCK_A), 7, Arduino A5 (SPI-CLK)
-2 (MOSI_A), Arduino A4 (SPI-MISO) - 64m1 Could potentially continue to *listen* on SPI
+12 (SCK_A), 7, Arduino A4 (SPI-CLK)
+2 (MOSI_A), Arduino A3 (SPI-MISO) - 64m1 Could potentially continue to *listen* on SPI
 
 20, AGND
 19, AVCC
