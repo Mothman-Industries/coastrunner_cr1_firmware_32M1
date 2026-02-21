@@ -1,0 +1,14 @@
+# ninja log v7
+36	424	7933478910765748	CMakeFiles/bldc_sensor_default_default_avr_gcc_compile.dir/C_/Users/Timothy/Documents/git/coastrunner_cr1_firmware_32M1/src/bldc_sensor/dac.c.o	a34075f7f497ad00
+28	429	7933478910695759	CMakeFiles/bldc_sensor_default_default_avr_gcc_compile.dir/2352c26bc6ea2d9e5af7c0f2b295c207/src/bldc_sensor/a4910.c.o	56791c37bfc8cf8a
+33	432	7933478910745747	CMakeFiles/bldc_sensor_default_default_avr_gcc_compile.dir/2352c26bc6ea2d9e5af7c0f2b295c207/src/bldc_sensor/comparator.c.o	425b665853e98d4
+40	432	7933478910815751	CMakeFiles/bldc_sensor_default_default_avr_gcc_compile.dir/C_/Users/Timothy/Documents/git/coastrunner_cr1_firmware_32M1/src/bldc_sensor/hall.c.o	55d7b9d1432c51fc
+44	437	7933478910855757	CMakeFiles/bldc_sensor_default_default_avr_gcc_compile.dir/C_/Users/Timothy/Documents/git/coastrunner_cr1_firmware_32M1/src/bldc_sensor/main.c.o	ca86901dc9e23bed
+46	438	7933478910875749	CMakeFiles/bldc_sensor_default_default_avr_gcc_compile.dir/2352c26bc6ea2d9e5af7c0f2b295c207/src/bldc_sensor/motor.c.o	eb3debb631042ff8
+38	445	7933478910795754	CMakeFiles/bldc_sensor_default_default_avr_gcc_compile.dir/2352c26bc6ea2d9e5af7c0f2b295c207/src/bldc_sensor/debug.c.o	98c7ff5b28f6a030
+31	446	7933478910725750	CMakeFiles/bldc_sensor_default_default_avr_gcc_compile.dir/C_/Users/Timothy/Documents/git/coastrunner_cr1_firmware_32M1/src/bldc_sensor/adc.c.o	d75a9ad88ecb32a2
+54	446	7933478910955765	CMakeFiles/bldc_sensor_default_default_avr_gcc_compile.dir/2352c26bc6ea2d9e5af7c0f2b295c207/src/bldc_sensor/timing.c.o	5d37fb2e21a30366
+51	450	7933478910925768	CMakeFiles/bldc_sensor_default_default_avr_gcc_compile.dir/C_/Users/Timothy/Documents/git/coastrunner_cr1_firmware_32M1/src/bldc_sensor/psc.c.o	1b4621d6ef173ece
+49	453	7933478910905761	CMakeFiles/bldc_sensor_default_default_avr_gcc_compile.dir/C_/Users/Timothy/Documents/git/coastrunner_cr1_firmware_32M1/src/bldc_sensor/pid.c.o	470a6224210db351
+42	454	7933478910835749	CMakeFiles/bldc_sensor_default_default_avr_gcc_compile.dir/2352c26bc6ea2d9e5af7c0f2b295c207/src/bldc_sensor/interface.c.o	aaac8c44269ccf66
+454	735	7933478914948421	C:/Users/Timothy/Documents/git/coastrunner_cr1_firmware_32M1/src/bldc_sensor/out/bldc_sensor/default.elf	247535439281f1a8
