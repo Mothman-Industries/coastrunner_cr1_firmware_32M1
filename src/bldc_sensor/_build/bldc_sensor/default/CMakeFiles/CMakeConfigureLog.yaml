@@ -62,7 +62,7 @@ events:
     found: "C:/Users/Timothy/.mplab/app-finder/apps/ninja/v1.13.2/ninja.exe"
     search_context:
       ENV{PATH}:
-        - "C:\\Users\\Timothy\\.mplab\\app-finder\\apps/ninja/v1.13.2"
+        - "C:\\Users\\Timothy\\.mplab\\app-finder\\apps\\ninja\\v1.13.2"
         - "C:\\Users\\Timothy\\.mplab\\app-finder\\apps\\make\\v4.4.1\\windows"
         - "C:\\Users\\Timothy\\.mplab\\app-finder\\apps\\hexmate\\v3.00\\dist\\win\\bin"
         - "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.4.7-hotspot\\bin"
@@ -113,7 +113,7 @@ events:
     found: "C:/Users/Timothy/.mplab/app-finder/apps/cmake/v4.2.3/cmake-4.2.3-windows-x86_64/share/cmake-4.2/Modules/CMakeCCompilerId.c.in"
     search_context:
       ENV{PATH}:
-        - "C:\\Users\\Timothy\\.mplab\\app-finder\\apps/ninja/v1.13.2"
+        - "C:\\Users\\Timothy\\.mplab\\app-finder\\apps\\ninja\\v1.13.2"
         - "C:\\Users\\Timothy\\.mplab\\app-finder\\apps\\make\\v4.4.1\\windows"
         - "C:\\Users\\Timothy\\.mplab\\app-finder\\apps\\hexmate\\v3.00\\dist\\win\\bin"
         - "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.4.7-hotspot\\bin"
@@ -210,7 +210,7 @@ events:
     found: "C:/Users/Timothy/.mplab/app-finder/apps/avr-gcc/v7.3.0/avr8-gnu-toolchain-win32_x86_64/bin/avr-ranlib.exe"
     search_context:
       ENV{PATH}:
-        - "C:\\Users\\Timothy\\.mplab\\app-finder\\apps/ninja/v1.13.2"
+        - "C:\\Users\\Timothy\\.mplab\\app-finder\\apps\\ninja\\v1.13.2"
         - "C:\\Users\\Timothy\\.mplab\\app-finder\\apps\\make\\v4.4.1\\windows"
         - "C:\\Users\\Timothy\\.mplab\\app-finder\\apps\\hexmate\\v3.00\\dist\\win\\bin"
         - "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.4.7-hotspot\\bin"
@@ -285,7 +285,7 @@ events:
     found: "C:/Users/Timothy/.mplab/app-finder/apps/avr-gcc/v7.3.0/avr8-gnu-toolchain-win32_x86_64/bin/avr-strip.exe"
     search_context:
       ENV{PATH}:
-        - "C:\\Users\\Timothy\\.mplab\\app-finder\\apps/ninja/v1.13.2"
+        - "C:\\Users\\Timothy\\.mplab\\app-finder\\apps\\ninja\\v1.13.2"
         - "C:\\Users\\Timothy\\.mplab\\app-finder\\apps\\make\\v4.4.1\\windows"
         - "C:\\Users\\Timothy\\.mplab\\app-finder\\apps\\hexmate\\v3.00\\dist\\win\\bin"
         - "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.4.7-hotspot\\bin"
@@ -360,7 +360,7 @@ events:
     found: "C:/Users/Timothy/.mplab/app-finder/apps/avr-gcc/v7.3.0/avr8-gnu-toolchain-win32_x86_64/bin/avr-ld.exe"
     search_context:
       ENV{PATH}:
-        - "C:\\Users\\Timothy\\.mplab\\app-finder\\apps/ninja/v1.13.2"
+        - "C:\\Users\\Timothy\\.mplab\\app-finder\\apps\\ninja\\v1.13.2"
         - "C:\\Users\\Timothy\\.mplab\\app-finder\\apps\\make\\v4.4.1\\windows"
         - "C:\\Users\\Timothy\\.mplab\\app-finder\\apps\\hexmate\\v3.00\\dist\\win\\bin"
         - "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.4.7-hotspot\\bin"
@@ -435,7 +435,7 @@ events:
     found: "C:/Users/Timothy/.mplab/app-finder/apps/avr-gcc/v7.3.0/avr8-gnu-toolchain-win32_x86_64/bin/avr-nm.exe"
     search_context:
       ENV{PATH}:
-        - "C:\\Users\\Timothy\\.mplab\\app-finder\\apps/ninja/v1.13.2"
+        - "C:\\Users\\Timothy\\.mplab\\app-finder\\apps\\ninja\\v1.13.2"
         - "C:\\Users\\Timothy\\.mplab\\app-finder\\apps\\make\\v4.4.1\\windows"
         - "C:\\Users\\Timothy\\.mplab\\app-finder\\apps\\hexmate\\v3.00\\dist\\win\\bin"
         - "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.4.7-hotspot\\bin"
@@ -510,7 +510,7 @@ events:
     found: "C:/Users/Timothy/.mplab/app-finder/apps/avr-gcc/v7.3.0/avr8-gnu-toolchain-win32_x86_64/bin/avr-objdump.exe"
     search_context:
       ENV{PATH}:
-        - "C:\\Users\\Timothy\\.mplab\\app-finder\\apps/ninja/v1.13.2"
+        - "C:\\Users\\Timothy\\.mplab\\app-finder\\apps\\ninja\\v1.13.2"
         - "C:\\Users\\Timothy\\.mplab\\app-finder\\apps\\make\\v4.4.1\\windows"
         - "C:\\Users\\Timothy\\.mplab\\app-finder\\apps\\hexmate\\v3.00\\dist\\win\\bin"
         - "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.4.7-hotspot\\bin"
@@ -585,7 +585,7 @@ events:
     found: "C:/Users/Timothy/.mplab/app-finder/apps/avr-gcc/v7.3.0/avr8-gnu-toolchain-win32_x86_64/bin/avr-objcopy.exe"
     search_context:
       ENV{PATH}:
-        - "C:\\Users\\Timothy\\.mplab\\app-finder\\apps/ninja/v1.13.2"
+        - "C:\\Users\\Timothy\\.mplab\\app-finder\\apps\\ninja\\v1.13.2"
         - "C:\\Users\\Timothy\\.mplab\\app-finder\\apps\\make\\v4.4.1\\windows"
         - "C:\\Users\\Timothy\\.mplab\\app-finder\\apps\\hexmate\\v3.00\\dist\\win\\bin"
         - "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.4.7-hotspot\\bin"
@@ -660,7 +660,7 @@ events:
     found: "C:/Users/Timothy/.mplab/app-finder/apps/avr-gcc/v7.3.0/avr8-gnu-toolchain-win32_x86_64/bin/avr-readelf.exe"
     search_context:
       ENV{PATH}:
-        - "C:\\Users\\Timothy\\.mplab\\app-finder\\apps/ninja/v1.13.2"
+        - "C:\\Users\\Timothy\\.mplab\\app-finder\\apps\\ninja\\v1.13.2"
         - "C:\\Users\\Timothy\\.mplab\\app-finder\\apps\\make\\v4.4.1\\windows"
         - "C:\\Users\\Timothy\\.mplab\\app-finder\\apps\\hexmate\\v3.00\\dist\\win\\bin"
         - "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.4.7-hotspot\\bin"
@@ -884,7 +884,7 @@ events:
     found: false
     search_context:
       ENV{PATH}:
-        - "C:\\Users\\Timothy\\.mplab\\app-finder\\apps/ninja/v1.13.2"
+        - "C:\\Users\\Timothy\\.mplab\\app-finder\\apps\\ninja\\v1.13.2"
         - "C:\\Users\\Timothy\\.mplab\\app-finder\\apps\\make\\v4.4.1\\windows"
         - "C:\\Users\\Timothy\\.mplab\\app-finder\\apps\\hexmate\\v3.00\\dist\\win\\bin"
         - "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.4.7-hotspot\\bin"
@@ -959,7 +959,7 @@ events:
     found: "C:/Users/Timothy/.mplab/app-finder/apps/avr-gcc/v7.3.0/avr8-gnu-toolchain-win32_x86_64/bin/avr-addr2line.exe"
     search_context:
       ENV{PATH}:
-        - "C:\\Users\\Timothy\\.mplab\\app-finder\\apps/ninja/v1.13.2"
+        - "C:\\Users\\Timothy\\.mplab\\app-finder\\apps\\ninja\\v1.13.2"
         - "C:\\Users\\Timothy\\.mplab\\app-finder\\apps\\make\\v4.4.1\\windows"
         - "C:\\Users\\Timothy\\.mplab\\app-finder\\apps\\hexmate\\v3.00\\dist\\win\\bin"
         - "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.4.7-hotspot\\bin"
@@ -1183,7 +1183,7 @@ events:
     found: false
     search_context:
       ENV{PATH}:
-        - "C:\\Users\\Timothy\\.mplab\\app-finder\\apps/ninja/v1.13.2"
+        - "C:\\Users\\Timothy\\.mplab\\app-finder\\apps\\ninja\\v1.13.2"
         - "C:\\Users\\Timothy\\.mplab\\app-finder\\apps\\make\\v4.4.1\\windows"
         - "C:\\Users\\Timothy\\.mplab\\app-finder\\apps\\hexmate\\v3.00\\dist\\win\\bin"
         - "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.4.7-hotspot\\bin"
@@ -1485,7 +1485,7 @@ events:
     found: "C:/Users/Timothy/.mplab/app-finder/apps/avr-gcc/v7.3.0/avr8-gnu-toolchain-win32_x86_64/bin/avr-gcc-ar.exe"
     search_context:
       ENV{PATH}:
-        - "C:\\Users\\Timothy\\.mplab\\app-finder\\apps/ninja/v1.13.2"
+        - "C:\\Users\\Timothy\\.mplab\\app-finder\\apps\\ninja\\v1.13.2"
         - "C:\\Users\\Timothy\\.mplab\\app-finder\\apps\\make\\v4.4.1\\windows"
         - "C:\\Users\\Timothy\\.mplab\\app-finder\\apps\\hexmate\\v3.00\\dist\\win\\bin"
         - "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.4.7-hotspot\\bin"
@@ -1787,7 +1787,7 @@ events:
     found: "C:/Users/Timothy/.mplab/app-finder/apps/avr-gcc/v7.3.0/avr8-gnu-toolchain-win32_x86_64/bin/avr-gcc-ranlib.exe"
     search_context:
       ENV{PATH}:
-        - "C:\\Users\\Timothy\\.mplab\\app-finder\\apps/ninja/v1.13.2"
+        - "C:\\Users\\Timothy\\.mplab\\app-finder\\apps\\ninja\\v1.13.2"
         - "C:\\Users\\Timothy\\.mplab\\app-finder\\apps\\make\\v4.4.1\\windows"
         - "C:\\Users\\Timothy\\.mplab\\app-finder\\apps\\hexmate\\v3.00\\dist\\win\\bin"
         - "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.4.7-hotspot\\bin"
@@ -1838,7 +1838,7 @@ events:
     found: "C:/Users/Timothy/.mplab/app-finder/apps/cmake/v4.2.3/cmake-4.2.3-windows-x86_64/share/cmake-4.2/Modules/CMakeCXXCompilerId.cpp.in"
     search_context:
       ENV{PATH}:
-        - "C:\\Users\\Timothy\\.mplab\\app-finder\\apps/ninja/v1.13.2"
+        - "C:\\Users\\Timothy\\.mplab\\app-finder\\apps\\ninja\\v1.13.2"
         - "C:\\Users\\Timothy\\.mplab\\app-finder\\apps\\make\\v4.4.1\\windows"
         - "C:\\Users\\Timothy\\.mplab\\app-finder\\apps\\hexmate\\v3.00\\dist\\win\\bin"
         - "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.4.7-hotspot\\bin"
@@ -2162,7 +2162,7 @@ events:
     found: "C:/Users/Timothy/.mplab/app-finder/apps/avr-gcc/v7.3.0/avr8-gnu-toolchain-win32_x86_64/bin/avr-gcc-ar.exe"
     search_context:
       ENV{PATH}:
-        - "C:\\Users\\Timothy\\.mplab\\app-finder\\apps/ninja/v1.13.2"
+        - "C:\\Users\\Timothy\\.mplab\\app-finder\\apps\\ninja\\v1.13.2"
         - "C:\\Users\\Timothy\\.mplab\\app-finder\\apps\\make\\v4.4.1\\windows"
         - "C:\\Users\\Timothy\\.mplab\\app-finder\\apps\\hexmate\\v3.00\\dist\\win\\bin"
         - "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.4.7-hotspot\\bin"
@@ -2464,7 +2464,7 @@ events:
     found: "C:/Users/Timothy/.mplab/app-finder/apps/avr-gcc/v7.3.0/avr8-gnu-toolchain-win32_x86_64/bin/avr-gcc-ranlib.exe"
     search_context:
       ENV{PATH}:
-        - "C:\\Users\\Timothy\\.mplab\\app-finder\\apps/ninja/v1.13.2"
+        - "C:\\Users\\Timothy\\.mplab\\app-finder\\apps\\ninja\\v1.13.2"
         - "C:\\Users\\Timothy\\.mplab\\app-finder\\apps\\make\\v4.4.1\\windows"
         - "C:\\Users\\Timothy\\.mplab\\app-finder\\apps\\hexmate\\v3.00\\dist\\win\\bin"
         - "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.4.7-hotspot\\bin"
@@ -2704,7 +2704,7 @@ events:
     found: "C:/Users/Timothy/.mplab/app-finder/apps/avr-gcc/v7.3.0/avr8-gnu-toolchain-win32_x86_64/bin/avr-gcc-ar.exe"
     search_context:
       ENV{PATH}:
-        - "C:\\Users\\Timothy\\.mplab\\app-finder\\apps/ninja/v1.13.2"
+        - "C:\\Users\\Timothy\\.mplab\\app-finder\\apps\\ninja\\v1.13.2"
         - "C:\\Users\\Timothy\\.mplab\\app-finder\\apps\\make\\v4.4.1\\windows"
         - "C:\\Users\\Timothy\\.mplab\\app-finder\\apps\\hexmate\\v3.00\\dist\\win\\bin"
         - "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.4.7-hotspot\\bin"
@@ -2931,7 +2931,7 @@ events:
     found: "C:/Users/Timothy/.mplab/app-finder/apps/avr-gcc/v7.3.0/avr8-gnu-toolchain-win32_x86_64/bin/avr-gcc-ranlib.exe"
     search_context:
       ENV{PATH}:
-        - "C:\\Users\\Timothy\\.mplab\\app-finder\\apps/ninja/v1.13.2"
+        - "C:\\Users\\Timothy\\.mplab\\app-finder\\apps\\ninja\\v1.13.2"
         - "C:\\Users\\Timothy\\.mplab\\app-finder\\apps\\make\\v4.4.1\\windows"
         - "C:\\Users\\Timothy\\.mplab\\app-finder\\apps\\hexmate\\v3.00\\dist\\win\\bin"
         - "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.4.7-hotspot\\bin"

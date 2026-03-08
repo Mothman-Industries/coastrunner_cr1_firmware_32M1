@@ -58,8 +58,10 @@
     8.25 counts per amp through each phase 
     IMAX must be less than 254! */
 
+    #define IMAX 42  //imax(amps) =  5 amps in phase
+    //#define IMAX 83  //imax(amps) = 10 amps in phase
     //#define IMAX 124 //imax(amps) = 15 amps in phase
-    #define IMAX 165 //imax(amps) = 20 amps in phase
+    //#define IMAX 165 //imax(amps) = 20 amps in phase -- This one for now
     //#define IMAX 206 //imax(amps) = 25 amps in phase
     //#define IMAX 248 //imax(amps) = 30 amps in phase
 

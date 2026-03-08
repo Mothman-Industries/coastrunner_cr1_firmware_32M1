@@ -12,3 +12,17 @@
 49	453	7933478910905761	CMakeFiles/bldc_sensor_default_default_avr_gcc_compile.dir/C_/Users/Timothy/Documents/git/coastrunner_cr1_firmware_32M1/src/bldc_sensor/pid.c.o	470a6224210db351
 42	454	7933478910835749	CMakeFiles/bldc_sensor_default_default_avr_gcc_compile.dir/2352c26bc6ea2d9e5af7c0f2b295c207/src/bldc_sensor/interface.c.o	aaac8c44269ccf66
 454	735	7933478914948421	C:/Users/Timothy/Documents/git/coastrunner_cr1_firmware_32M1/src/bldc_sensor/out/bldc_sensor/default.elf	247535439281f1a8
+48	311	7946467190283758	CMakeFiles/bldc_sensor_default_default_avr_gcc_compile.dir/C_/Users/Timothy/Documents/git/coastrunner_cr1_firmware_32M1/src/bldc_sensor/main.c.o	ca86901dc9e23bed
+30	313	7946467190101293	CMakeFiles/bldc_sensor_default_default_avr_gcc_compile.dir/2352c26bc6ea2d9e5af7c0f2b295c207/src/bldc_sensor/a4910.c.o	56791c37bfc8cf8a
+36	314	7946467190163749	CMakeFiles/bldc_sensor_default_default_avr_gcc_compile.dir/2352c26bc6ea2d9e5af7c0f2b295c207/src/bldc_sensor/comparator.c.o	425b665853e98d4
+38	314	7946467190183768	CMakeFiles/bldc_sensor_default_default_avr_gcc_compile.dir/C_/Users/Timothy/Documents/git/coastrunner_cr1_firmware_32M1/src/bldc_sensor/dac.c.o	a34075f7f497ad00
+41	315	7946467190213772	CMakeFiles/bldc_sensor_default_default_avr_gcc_compile.dir/2352c26bc6ea2d9e5af7c0f2b295c207/src/bldc_sensor/debug.c.o	98c7ff5b28f6a030
+43	316	7946467190233840	CMakeFiles/bldc_sensor_default_default_avr_gcc_compile.dir/C_/Users/Timothy/Documents/git/coastrunner_cr1_firmware_32M1/src/bldc_sensor/hall.c.o	55d7b9d1432c51fc
+50	321	7946467190303745	CMakeFiles/bldc_sensor_default_default_avr_gcc_compile.dir/2352c26bc6ea2d9e5af7c0f2b295c207/src/bldc_sensor/motor.c.o	eb3debb631042ff8
+55	322	7946467190353751	CMakeFiles/bldc_sensor_default_default_avr_gcc_compile.dir/C_/Users/Timothy/Documents/git/coastrunner_cr1_firmware_32M1/src/bldc_sensor/psc.c.o	1b4621d6ef173ece
+33	333	7946467190133655	CMakeFiles/bldc_sensor_default_default_avr_gcc_compile.dir/C_/Users/Timothy/Documents/git/coastrunner_cr1_firmware_32M1/src/bldc_sensor/adc.c.o	d75a9ad88ecb32a2
+59	334	7946467190393758	CMakeFiles/bldc_sensor_default_default_avr_gcc_compile.dir/2352c26bc6ea2d9e5af7c0f2b295c207/src/bldc_sensor/timing.c.o	5d37fb2e21a30366
+53	334	7946467190333753	CMakeFiles/bldc_sensor_default_default_avr_gcc_compile.dir/C_/Users/Timothy/Documents/git/coastrunner_cr1_firmware_32M1/src/bldc_sensor/pid.c.o	470a6224210db351
+46	354	7946467190263756	CMakeFiles/bldc_sensor_default_default_avr_gcc_compile.dir/2352c26bc6ea2d9e5af7c0f2b295c207/src/bldc_sensor/interface.c.o	aaac8c44269ccf66
+20	94	7946467535959494	CMakeFiles/bldc_sensor_default_default_avr_gcc_compile.dir/2352c26bc6ea2d9e5af7c0f2b295c207/src/bldc_sensor/interface.c.o	aaac8c44269ccf66
+95	311	7946467536709438	C:/Users/Timothy/Documents/git/coastrunner_cr1_firmware_32M1/src/bldc_sensor/out/bldc_sensor/default.elf	247535439281f1a8

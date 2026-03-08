@@ -89,14 +89,70 @@ void interface_sendStatus_RPM(void)
 
 	if(motor_state_get() == RUNNING)
 	{	
-		if     (RPM_actualMinusGoal > -0500) { unoPinA2_low() ; unoPinA4_low() ; } //actualRPM between 0000 & 0500 RPM slower than setpoint (or is faster than setpoint) 
-		else if(RPM_actualMinusGoal > -1000) { unoPinA2_low() ; unoPinA4_high(); } //actualRPM between 0501 & 1000 RPM slower than setpoint
-		else if(RPM_actualMinusGoal > -1500) { unoPinA2_high(); unoPinA4_low() ; } //actualRPM between 1001 & 1500 RPM slower than setpoint
-		else                                 { unoPinA2_high(); unoPinA4_high(); } //actualRPM beyond  1500        RPM slower than setpoint	
+		if     (RPM_actualMinusGoal > -0500) { interface_sendStatus(0b00); } //actualRPM between 0000 & 0500 RPM slower than setpoint (or is faster than setpoint) 
+		else if(RPM_actualMinusGoal > -1000) { interface_sendStatus(0b01); } //actualRPM between 0501 & 1000 RPM slower than setpoint
+		else if(RPM_actualMinusGoal > -1500) { interface_sendStatus(0b10); } //actualRPM between 1001 & 1500 RPM slower than setpoint
+		else                                 { interface_sendStatus(0b11); } //actualRPM beyond  1500        RPM slower than setpoint	
 	}
 	else //motor STOPPED
 	{
 		unoPinA2_input(); //shared with X1 limit switch (X1 only used during X table level)
 		unoPinA4_low();
+	}
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+void interface_sendStatus_overCurrent(void)
+{
+	interface_sendStatus(0b101);
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+void interface_sendStatus_stalled(void)
+{
+	interface_sendStatus(0b111);
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+void interface_sendStatus(int8_t status)
+{
+	if(motor_state_get() != RUNNING) //motor not RUNNING
+	{
+		unoPinA2_input(); //shared with X1 limit switch (X1 only used during X table level)
+		unoPinA4_low();
+	} else {
+		switch (status){
+			case 0: //000 Debug MSB  low, LSB  low - 00
+				unoPinA2_low(); 
+				unoPinA4_low();
+				break;
+			case 1: //001 Debug MSB  low, LSB high - 01
+				unoPinA2_low(); 
+				unoPinA4_high();
+				break;
+			case 2: //010 Debug MSB high, LSB  low - 10
+				unoPinA2_high(); 
+				unoPinA4_low();
+				break;
+			case 3: //011 Debug MSB high, LSB high - 11
+				unoPinA2_high(); 
+				unoPinA4_high();
+				break;
+			case 4: //100 Debug MSB   DC, LSB  low - X0
+				unoPinA4_low();
+				break;
+			case 5: //101 Debug MSB   DC, LSB high - X1
+				unoPinA4_high();
+				break;
+			case 6: //110 Debug MSB  low, LSB   DC - 0X
+				unoPinA2_low();
+				break;
+			case 7: //111 Debug MSB high, LSB   DC - 1X
+				unoPinA2_high();
+				break;
+		}
 	}
 }
