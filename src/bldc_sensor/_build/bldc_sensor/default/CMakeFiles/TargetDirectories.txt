@@ -1,4 +1,0 @@
-C:/Users/Timothy/Documents/git/coastrunner_cr1_firmware_32M1/src/bldc_sensor/_build/bldc_sensor/default/CMakeFiles/bldc_sensor_default_default_avr_gcc_compile.dir
-C:/Users/Timothy/Documents/git/coastrunner_cr1_firmware_32M1/src/bldc_sensor/_build/bldc_sensor/default/CMakeFiles/bldc_sensor_default_image_HOnbTgD5.dir
-C:/Users/Timothy/Documents/git/coastrunner_cr1_firmware_32M1/src/bldc_sensor/_build/bldc_sensor/default/CMakeFiles/edit_cache.dir
-C:/Users/Timothy/Documents/git/coastrunner_cr1_firmware_32M1/src/bldc_sensor/_build/bldc_sensor/default/CMakeFiles/rebuild_cache.dir
