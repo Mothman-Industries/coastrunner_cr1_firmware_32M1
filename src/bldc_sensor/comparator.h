@@ -10,7 +10,7 @@
 
     /* Comparator 1 configuration */
     #define COMP1_ENABLE_BIT_VALUE COMP_ENABLE
-    #define COMP1_INTERRUPT_ENABLE COMP_DISABLE_INTERRUPT
+    #define COMP1_INTERRUPT_ENABLE COMP_ENABLE_INTERRUPT
     #define COMP1_INTERRUPT_SELECT COMP_INTERRUPT_ON_OUTPUT_TOGGLE
     #define COMP1_CAPTURE_ENABLE COMP_CAPTURE_DISABLE
     #define COMP1_NEG_INPUT_SELECT COMP_USE_DAC_OUTPUT
@@ -21,12 +21,26 @@
     #define COMP2_INTERRUPT_SELECT COMP_INTERRUPT_ON_OUTPUT_TOGGLE
     #define COMP2_NEG_INPUT_SELECT COMP_USE_BANDGAP
 
+    /* Amplifier 0 configuration */
+    #define AMP0_ENABLE_VALUE                AMP_ENABLE
+    #define AMP0_INPUT_SHUNT_VALUE           AMP_SHUNT_DISABLE
+    #define AMP0_GAIN                        AMP_GAIN_5
+    #define AMP0_CMP0_CONNECTION_VALUE       AMP_CMP_CONNECTED
+    #define AMP0_CLOCK_SOURCE                AMP_CLOCK_EQ_PSC0
+
     /* Amplifier 1 configuration */
     #define AMP1_ENABLE_VALUE                AMP_ENABLE
     #define AMP1_INPUT_SHUNT_VALUE           AMP_SHUNT_DISABLE
     #define AMP1_GAIN                        AMP_GAIN_5
     #define AMP1_CMP1_CONNECTION_VALUE       AMP_CMP_CONNECTED
     #define AMP1_CLOCK_SOURCE                AMP_CLOCK_EQ_PSC0
+
+    /* Amplifier 1 configuration */
+    #define AMP2_ENABLE_VALUE                AMP_ENABLE
+    #define AMP2_INPUT_SHUNT_VALUE           AMP_SHUNT_DISABLE
+    #define AMP2_GAIN                        AMP_GAIN_5
+    #define AMP2_CMP2_CONNECTION_VALUE       AMP_CMP_CONNECTED
+    #define AMP2_CLOCK_SOURCE                AMP_CLOCK_EQ_PSC0
 
 
 
@@ -44,8 +58,11 @@
     8.25 counts per amp through each phase 
     IMAX must be less than 254! */
 
+    //#define IMAX 1   //imax(amps) =  0 amps in phase
+    //#define IMAX 42  //imax(amps) =  5 amps in phase
+    //#define IMAX 83  //imax(amps) = 10 amps in phase
     //#define IMAX 124 //imax(amps) = 15 amps in phase
-    #define IMAX 165 //imax(amps) = 20 amps in phase
+    #define IMAX 165 //imax(amps) = 20 amps in phase -- This one for now
     //#define IMAX 206 //imax(amps) = 25 amps in phase
     //#define IMAX 248 //imax(amps) = 30 amps in phase
 

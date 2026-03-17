@@ -1,0 +1,38 @@
+Motor go spinny [Citation Needed]
+
+ADC5 Reads goal rpm
+ - goal rpm is a scaled analog output from GRBL
+ - - This operation is currently triggered when PCINT3 is triggered
+ - PCINT3 is the pin direction set output from GRBL
+
+ Hall effect sensors generate interrupt on all phase changes
+  - On interrupt of "B" phase, rpm is determined
+  - - The time since the last measurement is passed back, but nothing is done with it
+  - Duty cycle is determined by the current value of the dutyPID
+  - If motor is set to CCW, hall readings are inverted
+
+PID Scheduler runs if it has been long enough
+ - Every 100 ticks, PID loop is called
+ - dt (delta time) is passed to PID loop
+ - - Currently the scheduler just passes 1 as dt 
+ - PID loop calculates error (speed)
+ - PID loop passes error (speed) and dt to PID updater
+ - PID updater calculates the new duty cycle
+ - This is returned to PID loop
+ - PID loop sets dutyPID to the output of PID updater
+ - PID scheduler resets its cycle count
+
+Every 28 microseconds Timer 0 generates an interrupt
+ - This interrupt changes timer0 set control loop to true
+ - - When this is true it resets to false
+ - - Interface updater is called, reading the target direction (and potentially target speed)
+ - - PID scheduler is called
+
+ If the motor is below the min speed and is set to be running
+  - KICKSTART DUTY is set as the duty cycle 
+  - KICKSTART DUTY is passed to the PSC phase selector
+  - This should continue until the minimum speed has been reached
+  - - This will also be constantly fighting the interrupts
+ - This should maybe be put in the PID Scheduler instead of the main loop
+ 
+  

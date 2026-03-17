@@ -7,7 +7,9 @@
     // ADC scheduler definitions
     #define ADC_MEASURING_NEXT     0
     #define ADC_MEASURING_GOAL_RPM 1
-    #define ADC_MEASURING_CURRENT  2
+    #define ADC_MEASURING_CURRENT_A  2
+    #define ADC_MEASURING_CURRENT_B  3
+    #define ADC_MEASURING_CURRENT_C  4
 
     void adc_init(void);
 

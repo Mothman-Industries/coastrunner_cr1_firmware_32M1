@@ -79,13 +79,12 @@ void pid_loop(int16_t dt)
 }
 
 // Pid scheduler: Adjusts motor control depending on error
-// Note: currently not used !
 void pid_scheduler(void)
 {
   static uint16_t timeSinceLastUpdate_PID = 0;
   
 
-  if(++timeSinceLastUpdate_PID >= 200)
+  if(++timeSinceLastUpdate_PID >= 100)
   {
     pid_loop(1);
     timeSinceLastUpdate_PID = 0;

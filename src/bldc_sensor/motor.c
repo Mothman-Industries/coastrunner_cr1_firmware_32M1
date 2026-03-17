@@ -37,5 +37,16 @@ void motor_run(void)
 
 ////////////////////////////////////////////////////////////////////////////////////////
 
+void motor_kickstart(void)
+{  
+  interface_sendStatus_stalled();
+  pid_dutyCycle_set(PID_KICKSTART_DUTY);
+
+  uint8_t phaseTarget = hall_getPosition();
+  psc_phaseSelect(PID_KICKSTART_DUTY, phaseTarget);
+}
+
+////////////////////////////////////////////////////////////////////////////////////////
+
 void    motor_direction_set(uint8_t direction) { (direction == MOTOR_CCW) ? (motorDirection = MOTOR_CCW) : (motorDirection = MOTOR_CW); }
 uint8_t motor_direction_get(void) { return motorDirection; } //This ONLY retrieves the modal state (not the actual pin logic level)

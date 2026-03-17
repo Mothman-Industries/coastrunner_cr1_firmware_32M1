@@ -1,3 +1,7 @@
 DS_Store
-src/bldc_sensor/default/bldc_sensorless.*
 src/.vs
+src/bldc_sensor/default/
+src/bldc_sensor/_build/
+src/bldc_sensor/out/
+src/bldc_sensor/Debug/
+src/bldc_sensor/cmake/

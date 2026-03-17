@@ -16,8 +16,8 @@ void    timing_runControlLoop_set(uint8_t state) { runControlLoop = state; }
 //interrupt causes main control loop to execute
 void timing_timer0_init(void)
 {
-  TCCR0A = (1<<WGM01); //set timer mode=CTC, don't connect timer to any output pins
-  TCCR0B = (1<<CS01)|(1<<CS00); //prescale Timer0 clock to CPU/64 prescaler //MUST also change TIMER0_TICK_PERIOD_us constant!
+  TCCR0A = (1<<WGM01)|(0<<WGM00); //set timer mode=CTC, don't connect timer to any output pins
+  TCCR0B = (0<<CS02)|(1<<CS01)|(1<<CS00); //prescale Timer0 clock to CPU/64 prescaler //MUST also change TIMER0_TICK_PERIOD_us constant!
   OCR0A  = TIMER0_COUNTS_TO; // f_interrupt = 1/(16MHz/64DIV)*(OCR0A+1) //OCR0A=7: 32us tick (512 clocks @ 16 MHz)
   TIMSK0 = (1<<OCIE0A); // Output compare A Match interrupt Enable
 }

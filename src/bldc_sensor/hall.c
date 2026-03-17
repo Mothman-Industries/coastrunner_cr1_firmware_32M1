@@ -22,7 +22,7 @@ void hall_init(void)
 uint8_t hall_getPosition(void)
 {
   static uint8_t state_previous = 0;
-  static uint8_t numConsecutiveInvalidStates = 0;	
+  static uint8_t numConsecutiveInvalidStates = 0;
   
   //Build Hall state 0b0000 0BGY (B=BLU, G=GRN, Y=YEL)
   uint8_t state = ( (( (PIND & (1<<PIND1)) >> PIND1) << 2) |  //Hall BLU //MSB
@@ -30,14 +30,14 @@ uint8_t hall_getPosition(void)
                     (( (PIND & (1<<PIND2)) >> PIND2) << 1) ); //Hall GRN
 
   if( ((state == 0b00000000) || (state == 0b00000111)) && //invalid Hall state (due to H->L or L->H transition)
-      (numConsecutiveInvalidStates < 10)                ) 
+      (numConsecutiveInvalidStates < 7)                ) 
   {
 	  //hall states in transition
 	  state = state_previous;
 	  numConsecutiveInvalidStates++;
-  } 
+  }
   else //valid Hall state (or motor is stalled)
-  {
+  {   
 	  state_previous = state; //store for next iteration
 	  numConsecutiveInvalidStates = 0;
   } 
@@ -50,7 +50,7 @@ uint8_t hall_getPosition(void)
 //Configure interrupt vectors (each time a hall sensor state changes)
 ISR( HALL_AC_vect )  //Hall_A & Hall_C share the same interrupt vector byte
 {
-  psc_commutateOutputWaveforms( pid_dutyCycle_get() );
+  psc_commutateOutputWaveforms( pid_dutyCycle_get() ); // Set duty cycle of output table
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////
