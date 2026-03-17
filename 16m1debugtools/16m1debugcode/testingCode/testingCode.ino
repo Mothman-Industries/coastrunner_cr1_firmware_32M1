@@ -5,14 +5,11 @@
 #define DEBUGB 18
 
 const float maxSpeed = 8000;
-const float minSpeed = 2000;
+const float minSpeed = 1500;
 const float maxPWM = 200;
 
-const int interval = 500;
-const int stepTime = 2500/8;
-
 float pwmMultiplier = maxPWM/maxSpeed;
-float pwmOffset = (minSpeed * pwmMultiplier) / 2;
+float pwmOffset = minSpeed * pwmMultiplier;
 
 int pwmPin = PWMPIN;
 int dirPin = DIRECTIONPIN;
@@ -21,12 +18,22 @@ int dbg1Pin = DEBUGA;
 int dbg0Pin = DEBUGB;
 int errCount = 0;
 int waitCount = 0;
-int consecutiveErrors = 0;
+int dbg1Count = 0;
+int dbg0Count = 0;
 
-String debug0 = "Error within 1k rpm";
-String debug1 = "Error between 1k and 2k rpm";
-String debug2 = "Error between 2k and 3k rpm";
-String debug3 = "Error over 3k rpm";
+unsigned long startTime;
+unsigned long delayTime = 2500;
+/*
+String debug0 = "Error within 500 rpm";
+String debug1 = "Error between 1k and 1.5k rpm";
+String debug2 = "Error between 1.5k and 2k rpm";
+String debug3 = "Error over 2k rpm";
+*/
+
+String debug0 = "No Current Errors";
+String debug1 = "Error: Overcurrent";
+String debug2 = "Error: Kickstart";
+String debug3 = "Error: Overcurrent and Kickstart";
 
 int targetSpeed = 4000;
 bool targetDirection = 0;
@@ -67,7 +74,7 @@ void setTargetSpeed(int target){
   pwmTarget = pwmTarget + pwmOffset;
   analogWrite (pwmPin, pwmTarget);
   //Serial.print("Set speed to ");
-  Serial.println(target);
+  //Serial.println(target);
   //Serial.println(pwmTarget);
 }
 
@@ -84,40 +91,45 @@ void setDirection(int target){
 
 void readError(){
   String errorMessage;
+  static String prevError;
   
   bool err1 = digitalRead(dbg1Pin);
   bool err0 = digitalRead(dbg0Pin);
+
+  dbg1Count = dbg1Count + err1;
+  dbg0Count = dbg0Count + err0;
 
   if(err1 == 0 && err0 == 0){errorMessage = debug0;}
   else if(err1 == 0 && err0 == 1){errorMessage = debug1;}
   else if(err1 == 1 && err0 == 0){errorMessage = debug2;}
   else if(err1 == 1 && err0 == 1){errorMessage = debug3;}
 
-  //Serial.println(errorMessage);
+  if (errorMessage != prevError){
+    Serial.println(errorMessage);
+    Serial.print(" Count: (");
+    Serial.print(dbg0Count);
+    Serial.print(", ");
+    Serial.print(dbg1Count);
+    Serial.println(")");
+  }
+  
+  prevError = errorMessage;
 }
 
 void speedChangeLoop(){
   if(climbDirection){
-    targetSpeed = targetSpeed + interval;
+    targetSpeed = targetSpeed + 500;
     if(targetSpeed >= maxSpeed){      
       climbDirection = false;
     }
   } else if(!climbDirection){
-    targetSpeed = targetSpeed - interval;
-    if(targetSpeed <= minSpeed){
-      if(targetSpeed == 0){
-        delay(stepTime);
-        targetSpeed = minSpeed + interval;
-      } else {
-        targetSpeed = 0;
-      }
+    targetSpeed = targetSpeed - 500;
+    if(targetSpeed <= minSpeed){      
       climbDirection = true;
       targetDirection = !targetDirection;
     }
   }
   setTargetSpeed(targetSpeed);
-  generateInterrupt();
-  consecutiveErrors = 0;
   //setDirection(targetDirection);  
 }
 
@@ -131,10 +143,6 @@ void changeAtTarget(){
   }
   else{
     errCount++;
-    consecutiveErrors++;
-    if(consecutiveErrors > 7){
-      speedChangeLoop();
-    }
     Serial.print("Errors: ");
     Serial.println(errCount);
   }  
@@ -142,27 +150,19 @@ void changeAtTarget(){
 
 void rapidReverse(){
   setTargetSpeed(maxSpeed);
-  generateInterrupt();
   targetDirection = !targetDirection;
   setDirection(targetDirection);
   delay(5000);
 }
 
-void onOffToggle(){
-  if(digitalRead(pwmPin) != 0){
-    digitalWrite(pwmPin, 0);   
-  }else{
-    setTargetSpeed(targetSpeed); 
-  }
-  generateInterrupt();
-}
-
 void loop() {
   readError();
-  //speedChangeLoop();
-  //Serial.println(digitalRead(dbg1Pin)+digitalRead(dbg0Pin));
-  changeAtTarget();
-  //rapidReverse();
-  //onOffToggle();
-  delay(stepTime);
+  if(millis() - startTime > delayTime){
+    startTime = millis();
+    speedChangeLoop();
+    //Serial.println(digitalRead(dbg1Pin)+digitalRead(dbg0Pin));
+    //changeAtTarget();
+    //rapidReverse();
+    generateInterrupt();
+  }
 }
