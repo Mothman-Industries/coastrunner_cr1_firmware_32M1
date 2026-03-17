@@ -10,4 +10,7 @@
 	void interface_handler(void);
 
 	void interface_sendStatus_RPM(void);
+	void interface_sendStatus_overCurrent(void);
+	void interface_sendStatus_stalled(void);
+	void interface_sendStatus(int8_t status);
 #endif

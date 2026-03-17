@@ -10,7 +10,7 @@
 	#define PID_KICKSTART_DUTY PID_KICKSTART_VALUE
 
 	// PID coefficients
-	#define PID_COEFF_P 3L
+	#define PID_COEFF_P 2L
 	#define PID_COEFF_I 1L
 	#define PID_COEFF_D 0L
 	#define PID_COEF_SCALE_LOG2 14 // Number of fractional bits used to represent PID

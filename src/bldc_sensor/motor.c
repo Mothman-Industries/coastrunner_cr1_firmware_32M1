@@ -39,6 +39,7 @@ void motor_run(void)
 
 void motor_kickstart(void)
 {  
+  interface_sendStatus_stalled();
   pid_dutyCycle_set(PID_KICKSTART_DUTY);
 
   uint8_t phaseTarget = hall_getPosition();

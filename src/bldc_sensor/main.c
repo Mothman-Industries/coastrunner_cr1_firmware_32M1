@@ -8,8 +8,10 @@ FUSES = { //set 32M1's fuses.  //Requires avr/io.h
 
 int main(void)
 {
+  dac_init();
   psc_init();
   adc_init();
+  comparator_init();
   motor_init();
   hall_init();
   a4910_init(); //configure pin to digital output

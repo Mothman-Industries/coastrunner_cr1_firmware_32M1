@@ -77,7 +77,8 @@ void interface_handler(void)
 	
 		if( (motor_state_get() == STOPPED) && (adc_goalRPM_get() > MIN_ALLOWED_RPM) ) { motor_run(); }
 			
-		interface_sendStatus_RPM();
+		// interface_sendStatus_RPM();
+		interface_sendStatus(0b000);
 	}
 }
 

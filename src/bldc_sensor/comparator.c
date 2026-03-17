@@ -7,9 +7,9 @@
 void comparator_init(void)
 {
   //JTS2doLater: We'll eventually use these to throttle back current, using 1V1 bandgap 
-  Comp_0_config();
+  //Comp_0_config();
   Comp_1_config();
-  Comp_2_config();
+  //Comp_2_config();
 
   //Amp0_config();
   //Amp1_config();
@@ -18,14 +18,23 @@ void comparator_init(void)
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
 
-//ISR(ANACOMP_0_vect){}
+ISR(ANACOMP0_vect)
+{
+  interface_sendStatus_overCurrent();
+}
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
 
-//ISR(ANACOMP_1_vect){}
+ISR(ANACOMP1_vect)
+{
+  interface_sendStatus_overCurrent();
+}
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
 
-//ISR(ANACOMP_2_vect){}
+ISR(ANACOMP2_vect)
+{
+  interface_sendStatus_overCurrent();
+}
 
 /////////////////////////////////////////////////////////////////////////////////////////////////

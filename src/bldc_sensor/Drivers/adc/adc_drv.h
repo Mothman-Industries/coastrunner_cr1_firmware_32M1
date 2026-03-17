@@ -134,6 +134,7 @@
 		  //! @{
 	
 	//JTS: These are the various registers that need to be set to use the ADC //adc_init() does the same thing with functions
+	
 	// #define Adc_config() \
 	//   ADMUX  = (ADC_REF_SOURCE<<REFS0)| \
 	// 		   (ADC_ADLAR_VALUE<<ADLAR)| \
@@ -181,7 +182,6 @@
 				 (AMP2_INPUT_SHUNT_VALUE<<AMP2IS)| \
 				 (AMP2_GAIN<<AMP2G0)| \
 				 (AMP2_CMP2_CONNECTION_VALUE<<AMPCMP2)| \
-				 (AMP2_CLOCK_SOURCE<<AMP2TS0);
 		  //! @}
 
 	   //! @}
