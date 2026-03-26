@@ -12,3 +12,10 @@ void a4910_init(void)   { (DDRB |= (1<<DDB4)); } //set A4910 reset pin to output
 
 void a4910_disable(void) { (PORTB &= ~(1<<PORTB4)); } //set RESETn pin low
 void a4910_enable(void)  { (PORTB |= (1<<PORTB4));  } //set RESETn pin high
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+ISR( A4910_DIAG_vect )  //Fault condition on A4910
+{
+  motor_stop();
+}

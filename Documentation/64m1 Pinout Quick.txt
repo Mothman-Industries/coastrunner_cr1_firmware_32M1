@@ -36,7 +36,7 @@ CMP and DAC are not currently initialized in code, but intial config is put toge
 
 31 (RESET), Arduino A0 (SPI-RST)
 12 (SCK_A), 7, Arduino A4 (SPI-CLK)
-2 (MOSI_A), Arduino A3 (SPI-MISO) - 64m1 Could potentially continue to *listen* on SPI
+2 (MOSI_A), Arduino A2 (SPI-MISO) - 64m1 Could potentially continue to *listen* on SPI
 
 20, AGND
 19, AVCC
