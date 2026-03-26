@@ -1,0 +1,128 @@
+{
+    "importedFrom": "src\\bldc_sensor\\bldc_sensor.cproj",
+    "version": "1.9",
+    "configurations": [
+        {
+            "name": "default",
+            "device": "ATmega32M1",
+            "imageType": "application",
+            "imagePath": "./out/bldc_sensor/default.elf",
+            "toolProperties": "default-Atmel-ICE",
+            "tool": "Atmel-ICE",
+            "packs": [
+                {
+                    "name": "ATmega_DFP",
+                    "vendor": "Microchip",
+                    "version": "3.6.299"
+                }
+            ],
+            "fileSet": "default files",
+            "toolchain": "default-avr-gcc"
+        }
+    ],
+    "propertyGroups": [
+        {
+            "name": "default-avr-gcc",
+            "type": "toolchain",
+            "provider": "microchip.toolchains:avr-gcc@7.3.0",
+            "properties": {
+                "global.relax-branches": false,
+                "global.external-ram-check": false,
+                "compiler.call-prologues": false,
+                "compiler.no-interrupts": false,
+                "compiler.default-char-type": true,
+                "compiler.default-bitfield-type": true,
+                "compiler.optimization-level": "-Os",
+                "compiler.garbage-collect-functions": true,
+                "compiler.garbage-collect-data": true,
+                "compiler.pack-struct": true,
+                "compiler.short-enums": true,
+                "compiler.short-calls": false,
+                "compiler.no-system-directories": false,
+                "compiler.additional-warnings": true,
+                "compiler.extra-warnings": false,
+                "compiler.undefined-identifier": false,
+                "compiler.make-warnings-into-errors": false,
+                "compiler.syntax-only": false,
+                "compiler.strict-ansi": false,
+                "compiler.strict-ansi-errors": false,
+                "compiler.inhibit-all": false,
+                "compiler.verbose": false,
+                "compiler.support-ansi": false,
+                "compiler.save-temps": false,
+                "linker.no-startup-files": false,
+                "linker.no-default-libs": false,
+                "linker.exclude-standard-libraries": false,
+                "linker.omit-symbol-information": false,
+                "linker.no-shared-libraries": false,
+                "linker.generate-map-file": true,
+                "linker.v-printf": false,
+                "linker.remove-unused-sections": true,
+                "linker.rodata-writable": false,
+                "assembler.announce-version": false,
+                "compiler++.call-prologues": false,
+                "compiler++.no-interrupts": false,
+                "compiler++.default-char-type": false,
+                "compiler++.default-bitfield-type": false,
+                "compiler++.optimization-level": "-O0",
+                "compiler++.garbage-collect-functions": true,
+                "compiler++.garbage-collect-data": true,
+                "compiler++.pack-struct": false,
+                "compiler++.short-enums": false,
+                "compiler++.short-calls": false,
+                "compiler++.no-system-directories": false,
+                "compiler++.preprocess-only": false,
+                "compiler++.additional-warnings": false,
+                "compiler++.undefined-identifier": false,
+                "compiler++.make-warnings-into-errors": false,
+                "compiler++.syntax-only": false,
+                "compiler++.strict-ansi": false,
+                "compiler++.strict-ansi-errors": false,
+                "compiler++.inhibit-all": false,
+                "compiler++.verbose": false,
+                "compiler++.support-ansi": false,
+                "compiler++.save-temps": false,
+                "compiler.extra-include-directories": "src\\Drivers;src\\bldc_sensor\\conf;..;src\\bldc_sensor\\uart",
+                "assembler.include-paths": "..\\..\\..\\..\\..\\..\\..\\Desktop\\AVR194 Trapezoid drive with overcurrent\\avr194_software\\Applications\\MC310_bldc_sensor\\..\\..\\Drivers\\adc;..\\..\\..\\..\\..\\..\\..\\Desktop\\AVR194 Trapezoid drive with overcurrent\\avr194_software\\Applications\\MC310_bldc_sensor\\..\\..\\Drivers\\comparator;..\\..\\..\\..\\..\\..\\..\\Desktop\\AVR194 Trapezoid drive with overcurrent\\avr194_software\\Applications\\MC310_bldc_sensor\\..\\..\\Drivers\\pll;..\\..\\..\\..\\..\\..\\..\\Desktop\\AVR194 Trapezoid drive with overcurrent\\avr194_software\\Applications\\MC310_bldc_sensor\\conf;..\\..\\..\\..\\..\\..\\..\\Desktop\\AVR194 Trapezoid drive with overcurrent\\avr194_software\\Applications\\MC310_bldc_sensor\\.;..\\..\\..\\..\\..\\..\\..\\Desktop\\AVR194 Trapezoid drive with overcurrent\\avr194_software\\Applications\\MC310_bldc_sensor\\uart;..\\..\\..\\..\\..\\..\\..\\Desktop\\AVR194 Trapezoid drive with overcurrent\\avr194_software\\Applications\\MC310_bldc_sensor\\..\\..\\Drivers",
+                "compiler.appendMe": [
+                    "-gdwarf-2",
+                    "-std=gnu99"
+                ],
+                "assembler.appendMe": [
+                    "-Wall",
+                    "-gdwarf-2",
+                    "-std=gnu99",
+                    "-Os",
+                    "-funsigned-char",
+                    "-funsigned-bitfields",
+                    "-fpack-struct",
+                    "-fshort-enums"
+                ],
+                "global.omit-pack-options": "true",
+                "global.user-pack-include": [
+                    "C:/Program Files (x86)/Atmel/Studio/7.0/Packs/Atmel/ATmega_DFP/1.4.331/include"
+                ],
+                "global.user-pack-device-support": "C:/Program Files (x86)/Atmel/Studio/7.0/Packs/Atmel/ATmega_DFP/1.4.331/gcc/dev/atmega32m1"
+            }
+        },
+        {
+            "name": "default-Atmel-ICE",
+            "type": "tool",
+            "properties": {
+                "programoptions.eraseb4program": true,
+                "programoptions.preserveeeprom": true,
+                "communication.interface": "ISP",
+                "communication.speed": "0.125"
+            }
+        }
+    ],
+    "fileSets": [
+        {
+            "name": "default files",
+            "files": [
+                "src/bldc_sensor/*{.c,.h}"
+            ],
+            "encoding": "utf-8"
+        }
+    ]
+}

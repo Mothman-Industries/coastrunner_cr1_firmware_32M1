@@ -5,3 +5,15 @@ src/bldc_sensor/_build/
 src/bldc_sensor/out/
 src/bldc_sensor/Debug/
 src/bldc_sensor/cmake/
+.generated_files/
+build/
+dist/
+nbproject/
+Makefile*
+Package-*
+private/
+_build/
+!cmake/**/user.cmake
+cmake/**/.generated/*
+cmake/**/CMake*
+out/
