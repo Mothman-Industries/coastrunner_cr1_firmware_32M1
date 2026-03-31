@@ -5,13 +5,13 @@ It provides closed-loop (VFD) spindle control using a trap strategy.
 
 ## Building
 
-To be built using the MPLAB extensions in VSCode
-Install the extension and open the project
+To be built using the MPLAB extensions in VSCode  
+Install the extension and open the project  
 Click the build button
 
 ## Flashing
 
-Upload ./16m1debugtools/16m1debugcode/GG3_Arduino_As_ISP.ino to your machine through the arduino IDE
-Using avrdude, flash debug.hex through the Arduino as ISP using command
-```avrdude -p m32m1 -c arduino_as_isp -P com6 -v -U flash:w:default.hex```
+Upload ./16m1debugtools/16m1debugcode/GG3_Arduino_As_ISP.ino to your machine through the arduino IDE  
+Using avrdude, flash debug.hex through the Arduino as ISP using command  
+```avrdude -p m32m1 -c arduino_as_isp -P com6 -v -U flash:w:default.hex```  
 Upload grBLDC to your machine through the arduino IDE
