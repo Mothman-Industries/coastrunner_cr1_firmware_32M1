@@ -1,0 +1,14 @@
+A sin table of 255 8 bit values with 3rd harmonic injection will be generated (2^8)
+
+PID will generate a 4 bit number (2^4) using a PLL
+
+The PSC counter will count up to 4096 (2^12)
+
+The sin value will be selected and multiplied by the PID error resulting in a 12 bit value that is continuously compared to the PSC counter
+
+A software PLL will be generated and compared to the edges of the hall sensors, giving 6 events per rotation.
+
+The software PLL frequency is chosen from the target speed measured by the ADC from the controller
+    This may enable putting the ADC in free-running mode, but that might prevent current sensing
+
+Timer 1 will be repurposed to generate the sin wave rather than measure the RPM
