@@ -5,9 +5,13 @@ It provides closed-loop (VFD) spindle control using a trap strategy.
 
 ## Building
 
-1. Clone the repo
-1. Install Microchip Studio (previously known as Atmel Studio or AVR Studio): https://www.microchip.com/en-us/tools-resources/develop/microchip-studio
-1. Inside Microchip Studio, open existing project and select [repo root] > src > GrBLDC_VFD.atsln
-1. Clear out any existing build files (any file named "bldc_sensorless") in the build folder ([repo root] > src > bldc_sensor > default). If these files exist and there has been no change to the code, then the solution won't build.
-1. Run Build > Build bldc_sensor
-1. The built hex file should now reside at [repo root] > src > bldc_sensor > default > bldc_sensorless.hex
+To be built using the MPLAB extensions in VSCode
+Install the extension and open the project
+Click the build button
+
+## Flashing
+
+Upload ./16m1debugtools/16m1debugcode/GG3_Arduino_As_ISP.ino to your machine through the arduino IDE
+Using avrdude, flash debug.hex through the Arduino as ISP using command
+```avrdude -p m32m1 -c arduino_as_isp -P com6 -v -U flash:w:default.hex```
+Upload grBLDC to your machine through the arduino IDE

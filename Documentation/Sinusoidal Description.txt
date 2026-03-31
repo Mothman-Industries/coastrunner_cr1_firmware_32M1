@@ -1,4 +1,4 @@
-A sin table of 255 8 bit values with 3rd harmonic injection will be generated (2^8)
+A sin table of 256 8 bit values with 3rd harmonic injection will be generated (2^8)
 
 PID will generate a 4 bit number (2^4) using a PLL
 
