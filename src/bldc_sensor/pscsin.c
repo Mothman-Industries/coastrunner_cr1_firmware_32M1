@@ -81,7 +81,13 @@ void psc_commutateOutputWaveforms(uint8_t duty)
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
 
-void psc_phaseSelect(uint8_t duty, uint8_t phaseTarget)
+void psc_setPosition(uint16_t rotationalStep){
+
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+void psc_setLevels()
 {
   if ( motor_state_get() == STOPPED )
   {
@@ -103,57 +109,89 @@ void psc_phaseSelect(uint8_t duty, uint8_t phaseTarget)
   else //(motor_state_get() == RUNNING)
   {
     psc_connectAllMOSFETs();
-
-  	//flip hall bits (6->1, 5->2. 4->3, 3->4, 2->5, 1->6)
-    if(motor_direction_get() == MOTOR_CCW) { phaseTarget = ((~phaseTarget) & 0b00000111); }
-
-  	Psc_lock();
-
-  	//Determine which two PSC outputs will generate PWM waveforms 
-  	switch(phaseTarget)
-  	{
-  		case 1:  
-  		Psc_set_module_A(duty,A_RA_VAL,0); //PWM_Q1 (PSC0A)(PD0)
-  		Psc_set_module_B(0,B_RA_VAL,0);
-  		Psc_set_module_C(0,C_RA_VAL,duty); //PWM_Q6 (PSC2B)(PB1)
-  		break;
-
-  		case 2: //Set_Q3Q2(); 1A 0B
-  		Psc_set_module_A(0,A_RA_VAL,duty); //PWM_Q2 (PSC0B)(PB7)
-  		Psc_set_module_B(duty,B_RA_VAL,0); //PWM_Q3 (PSC1A)(PC0)
-  		Psc_set_module_C(0,C_RA_VAL,0);
-  		break;
-
-  		case 3: //Set_Q3Q6(); 1A 2B
-  		Psc_set_module_A(0,A_RA_VAL,0);
-  		Psc_set_module_B(duty,B_RA_VAL,0); //PWM_Q3 (PSC1A)(PC0)
-  		Psc_set_module_C(0,C_RA_VAL,duty); //PWM_Q6 (PSC2B)(PB1)
-  		break;
-
-  		case 4: //Set_Q5Q4(); 2A 1B
-  		Psc_set_module_A(0,A_RA_VAL,0);
-  		Psc_set_module_B(0,B_RA_VAL,duty); //PWM_Q4 (PSC1B)(PB6)
-  		Psc_set_module_C(duty,C_RA_VAL,0); //PWM_Q5 (PSC2A)(PB0)
-  		break;
-
-  		case 5: //Set_Q1Q4(); 0A 1B
-  		Psc_set_module_A(duty,A_RA_VAL,0); //PWM_Q1 (PSC0A)(PD0)
-  		Psc_set_module_B(0,B_RA_VAL,duty); //PWM_Q4 (PSC1B)(PB6)
-  		Psc_set_module_C(0,C_RA_VAL,0);
-  		break;
-
-  		case 6: //Set_Q5Q2(); 2A 0B
-  		Psc_set_module_A(0,A_RA_VAL,duty); //PWM_Q2 (PSC0B)(PB7)
-  		Psc_set_module_B(0,B_RA_VAL,0);
-  		Psc_set_module_C(duty,C_RA_VAL,0); //PWM_Q5 (PSC2A)(PB0)
-  		break;
-        
-  		default: psc_disconnectAllMOSFETs(); break;
-  	}
-
+    Psc_lock();
+        Psc_set_module_A(0,A_RA_VAL,0);
+        Psc_set_module_B(0,B_RA_VAL,0);
+        Psc_set_module_C(0,C_RA_VAL,0);
     Psc_unlock();
   }
 }
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+//void psc_phaseSelect(uint8_t duty, uint8_t phaseTarget)
+//{
+//  if ( motor_state_get() == STOPPED )
+//  {
+//    psc_disconnectAllMOSFETs();
+//
+//    //disable PWM on all FETs
+//    Psc_set_module_A(0,A_RA_VAL,0);
+//    Psc_set_module_B(0,B_RA_VAL,0);
+//    Psc_set_module_C(0,C_RA_VAL,0);
+//    //Syntax:
+//      //Psc_set_module_n(A_SA_VAL, A_RA_VAL, A_SB_VAL);
+//      //SA_VAL: When PSC counter is less    than this value, high FET is enabled
+//      //SB_VAL: When PSC counter is greater than this value, low  FET is enabled
+//      //The difference between SA and SB sets the dead time between phases 
+//      
+//      //RA_VAL: Not used in centered mode //can be used to synchronize ADC
+//      //RB_VAL: Not used in centered mode 
+//  }
+//  else //(motor_state_get() == RUNNING)
+//  {
+//    psc_connectAllMOSFETs();
+//
+//  	//flip hall bits (6->1, 5->2. 4->3, 3->4, 2->5, 1->6)
+//    if(motor_direction_get() == MOTOR_CCW) { phaseTarget = ((~phaseTarget) & 0b00000111); }
+//
+//  	Psc_lock();
+//
+//  	//Determine which two PSC outputs will generate PWM waveforms 
+//  	switch(phaseTarget)
+//  	{
+//  		case 1:  
+//  		Psc_set_module_A(duty,A_RA_VAL,0); //PWM_Q1 (PSC0A)(PD0)
+//  		Psc_set_module_B(0,B_RA_VAL,0);
+//  		Psc_set_module_C(0,C_RA_VAL,duty); //PWM_Q6 (PSC2B)(PB1)
+//  		break;
+//
+//  		case 2: //Set_Q3Q2(); 1A 0B
+//  		Psc_set_module_A(0,A_RA_VAL,duty); //PWM_Q2 (PSC0B)(PB7)
+//  		Psc_set_module_B(duty,B_RA_VAL,0); //PWM_Q3 (PSC1A)(PC0)
+//  		Psc_set_module_C(0,C_RA_VAL,0);
+//  		break;
+//
+//  		case 3: //Set_Q3Q6(); 1A 2B
+//  		Psc_set_module_A(0,A_RA_VAL,0);
+//  		Psc_set_module_B(duty,B_RA_VAL,0); //PWM_Q3 (PSC1A)(PC0)
+//  		Psc_set_module_C(0,C_RA_VAL,duty); //PWM_Q6 (PSC2B)(PB1)
+//  		break;
+//
+//  		case 4: //Set_Q5Q4(); 2A 1B
+//  		Psc_set_module_A(0,A_RA_VAL,0);
+//  		Psc_set_module_B(0,B_RA_VAL,duty); //PWM_Q4 (PSC1B)(PB6)
+//  		Psc_set_module_C(duty,C_RA_VAL,0); //PWM_Q5 (PSC2A)(PB0)
+//  		break;
+//
+//  		case 5: //Set_Q1Q4(); 0A 1B
+//  		Psc_set_module_A(duty,A_RA_VAL,0); //PWM_Q1 (PSC0A)(PD0)
+//  		Psc_set_module_B(0,B_RA_VAL,duty); //PWM_Q4 (PSC1B)(PB6)
+//  		Psc_set_module_C(0,C_RA_VAL,0);
+//  		break;
+//
+//  		case 6: //Set_Q5Q2(); 2A 0B
+//  		Psc_set_module_A(0,A_RA_VAL,duty); //PWM_Q2 (PSC0B)(PB7)
+//  		Psc_set_module_B(0,B_RA_VAL,0);
+//  		Psc_set_module_C(duty,C_RA_VAL,0); //PWM_Q5 (PSC2A)(PB0)
+//  		break;
+//        
+//  		default: psc_disconnectAllMOSFETs(); break;
+//  	}
+//
+//    Psc_unlock();
+//  }
+//}
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
 
